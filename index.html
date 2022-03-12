@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chart Spike</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js" integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script>
+            let myChart = document.getElementById("myChart").getContext('2d');
+
+            let historyChart = new Chart(myChart, { 
+                type: 'bar',
+                data:{
+                    labels:['Monday', 'Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                    datasets:[{
+                        label:'Hours Billed',
+                        data:[
+                            16.6, 12.8, 10.9, 23.1, 15.2
+                        ],
+                        backgroundColor:'Grey',
+                        borderColor: 'Black'
+                    }]
+                },
+                options:{
+                    title:{
+                        display:true,
+                        text:'This Week'
+                    },
+                }
+            })
+        </script>
+        
+
+        <canvas id="chartTwo"></canvas>
+<script>
+const chartTwo = document.getElementById('chartTwo').getContext('2d');
+const myNextChart = new Chart(chartTwo, {
+    type: 'bar',
+    data: {
+        labels:['WK1', 'WK2','WK3', 'WK4', 'WK5', 'WK6'],
+        datasets: [{
+            label: 'Hours Billed',
+            data: [68.3, 67.9, 72.7, 82.9, 52.9, 67.3],
+            backgroundColor: ['Black']
+        }]
+    },
+    options: {
+        scales: {
+      y: {
+        min: 40
+      }
+    },
+    title:{
+        display:true,
+        text:'This Week',
+        fontSize:25
+    },
+    }
+});
+</script>
+ 
+    </body>
+</html>
